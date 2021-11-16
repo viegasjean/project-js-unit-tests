@@ -34,7 +34,7 @@
 */
 
 const calculator = (number1, number2) => {
-    const obj = {
+  const obj = {
     sum: Math.floor(number1 + number2),
     mult: Math.floor(number1 * number2),
     div: Math.floor(number1 / number2),
@@ -44,15 +44,15 @@ const calculator = (number1, number2) => {
 };
 
 const arrayGenerator = (type, object) => {
-  const thisOBject = {}
+  const thisOBject = {};
   if (type === 'keys') {
-    return Object.keys(object)
+    return Object.keys(object);
   }
-  if (type === 'values'){
-    return Object.values(object)
+  if (type === 'values') {
+    return Object.values(object);
   }
-  if(type === 'entries') {
-    return Object.entries(object)
+  if (type === 'entries') {
+    return Object.entries(object);
   }
 };
 
