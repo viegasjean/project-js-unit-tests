@@ -51,22 +51,14 @@ const createMenu = (obj) => {
     consumption: [],
   };
   menu.order = (e) => menu.consumption.push(e);
+
   menu.pay = () => {
     let total = 0;
-    for(const consumedItem of menu.consumption) {
-      for (const drink of Object.entries(menu.obj.drink)){
-        if (consumedItem === drink[0]){
-          total += Number(drink[1])
-        }
-      }
-      for (const food of Object.entries(menu.obj.food)){
-        if (consumedItem === food[0]){
-          total += Number(food[1])
-        }
-      }
+    for (const item of menu.consumption) {
+      total += menu.obj.drink[item] || menu.obj.food[item];
     }
-    return Number(total.toFixed(2))
-  }
+    return total.toFixed(2);
+  };
   return menu;
 };
 

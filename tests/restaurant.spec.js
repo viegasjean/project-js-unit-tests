@@ -75,7 +75,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     expect(objetoRetornado.consumption).toEqual([]);
     // TESTE 5: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado,
     // passando uma string como parâmetro (como `objetoRetornado.order('coxinha')`), tal string é adicionada
-    // ao array retornado em `objetoRetornado.consumption`.
     // ```
     // const objetoRetornado = createMenu(objetoQualquer);
     // objetoRetornado.order("coxinha");
@@ -88,14 +87,12 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     //objetoRetornado.order("coxinha");
     objetoRetornado.order('agua');
     objetoRetornado.order('sopa');
-    objetoRetornado.order('sashimi');
     // objetoRetornado.consumption // Retorno: ["coxinha", "agua", "sopa", "sashimi"]
     // ```
     expect(objetoRetornado.consumption).toEqual([
       'coxinha',
       'agua',
       'sopa',
-      'sashimi',
     ]);
     // TESTE 7: Verifique se a função `order` aceita que pedidos repetidos sejam acrescidos a consumption.
     // ```
@@ -108,7 +105,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
       'coxinha',
       'agua',
       'sopa',
-      'sashimi',
       'agua',
     ]);
     // TESTE 8: Verifique se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, conforme registrado em `objetoRetornado.consumption`
@@ -118,6 +114,6 @@ describe('10 - Implemente os casos de teste e a função `createMenu`', () => {
     // objetoRetornado.order('coxinha');
     // objetoRetornado.pay() // Retorno: somaDosPreçosDosPedidos
     // ```
-    expect(objetoRetornado.pay()).toBe(21.60);
+    expect(objetoRetornado.pay()).toBe('21.60');
   });
 });
